@@ -6,8 +6,8 @@
       <class name="com.lynn.qa.tests.LoginPageTests">
         <methods>
           <include name="tearDown"/>
+          <include name="LogoDisplayed"/>
           <include name="setUp"/>
-          <include name="ValidatePageTitle"/>
         </methods>
       </class> <!-- com.lynn.qa.tests.LoginPageTests -->
     </classes>

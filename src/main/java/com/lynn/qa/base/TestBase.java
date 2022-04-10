@@ -22,7 +22,7 @@ public class TestBase {
 
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream("C:\\Users\\user\\eclipse-workspace\\Test_POM_Sample\\src\\main\\java\\com\\lynn\\qa\\config\\config.properties");
+			FileInputStream ip = new FileInputStream("src\\test\\resources\\config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
