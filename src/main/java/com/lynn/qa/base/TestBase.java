@@ -3,9 +3,8 @@ package com.lynn.qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,7 +22,7 @@ public class TestBase {
 
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream("src/test/resources/config.properties");
+			FileInputStream ip = new FileInputStream("C:\\Users\\user\\eclipse-workspace\\Test_POM_Sample\\src\\main\\java\\com\\lynn\\qa\\config\\config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -59,15 +58,15 @@ public class TestBase {
 				options.addArguments("--disable-notifications");
 				options.addArguments("--window-size=2000,1180");
 
-				driver = new ChromeDriver(options);
+				driver = new ChromeDriver();
 			}
 
 			System.out.print("BROWSER LOADED SUCCESSFULLY!!!");
 
 			driver.manage().window().maximize();
 
-			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
 
 			driver.get(prop.getProperty("URL"));
 		} catch (Exception e) {

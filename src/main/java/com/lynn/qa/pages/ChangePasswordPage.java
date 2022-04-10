@@ -1,5 +1,7 @@
 package com.lynn.qa.pages;
 
-public class ChangePasswordPage {
+import com.lynn.qa.base.TestBase;
+
+public class ChangePasswordPage extends TestBase{
 
 }

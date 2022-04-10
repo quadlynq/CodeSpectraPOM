@@ -1,5 +1,7 @@
 package com.lynn.qa.pages;
 
-public class MakePaymentPage {
+import com.lynn.qa.base.TestBase;
+
+public class MakePaymentPage  extends TestBase{
 
 }
